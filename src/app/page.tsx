@@ -115,12 +115,19 @@ const init = useCallback(async () => {
       await init()
       
     }
+    try {
     initHashConnect()
+     } catch (error) {
+        console.log(error)
+      }
   },[init, setUpHashConnectEvents])
 
   useEffect(() => {
-  
+  try {
     handleGetContractState(CONTRACT_ID)
+     } catch (error) {
+        console.log(error)
+      }
   },[])
   return (
     <>
